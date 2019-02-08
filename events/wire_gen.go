@@ -7,9 +7,12 @@ package events
 
 // Injectors from wire.go:
 
-func InitializeEvent() Event {
+func InitializeEvent() (Event, error) {
 	message := NewMessage()
 	greeter := NewGreeter(message)
-	event := NewEvent(greeter)
-	return event
+	event, err := NewEvent(greeter)
+	if err != nil {
+		return Event{}, err
+	}
+	return event, nil
 }
