@@ -8,8 +8,8 @@ import (
 
 type Message string
 
-func NewMessage() Message {
-	return Message("Hello there!")
+func NewMessage(phrase string) Message {
+	return Message(phrase)
 }
 
 type Greeter struct {

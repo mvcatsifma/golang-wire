@@ -4,7 +4,8 @@ package events
 
 import "github.com/google/wire"
 
-func InitializeEvent() (Event, error) {
-	wire.Build(NewEvent, NewGreeter, NewMessage)
+func InitializeEvent(phrase string) (Event, error) {
+	//wire.Build(NewEvent, NewGreeter, NewMessage)
+	wire.Build(NewEvent, NewMessage)
 	return Event{}, nil
 }
